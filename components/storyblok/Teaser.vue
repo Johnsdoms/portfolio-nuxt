@@ -2,13 +2,12 @@
     <div class="teaser">
         <div
             v-editable="blok"
-            class=""
         >
-            <h1>
+            <h1 class="teaser-headline">
                 {{ blok.headline_scaffold }}
                 <span
                     id="headline_to_animate"
-                    class="teaser-headline--animated"
+                    class="teaser-headline__animated"
                 />
             </h1>
         </div>
@@ -31,23 +30,27 @@ onMounted(() => {
         strings: [`${props.blok.headline_to_animate}.`, "Me."],
         autoStart: true,
         loop: true,
+        pauseFor: 6500,
         cursor: "",
+        wrapperClassName: "teaser-headline__animated-text"
     });
 });
 </script>
 
 <style lang="scss">
-.teaser-headline--animated {
-  color: var(--c-red);
+.teaser-headline__animated {
+    &-text {
+        @include backdrop-underline();
+    }
 }
 
-.teaser {
 
+.teaser {
   &__background-image {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: -1;
+    z-index: -10;
   }
 }
 </style>

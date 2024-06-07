@@ -17,6 +17,6 @@ defineProps({ blok: Object });
 
 <style lang="scss">
 .main {
-    background-color: var(--c-yellow);
+    // background-color: var(--c-yellow);
 }
 </style>
