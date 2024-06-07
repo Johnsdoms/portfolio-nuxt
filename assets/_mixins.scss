@@ -1,0 +1,18 @@
+/**
+ * Define global styling mixins for reusable styles
+ */
+
+@mixin backdrop-underline($color: "yellow", $height: 18px) {
+    position: relative;
+
+    &::after {
+        content: "";
+        background-color: var(--c-#{$color});
+        height: $height;
+        width: calc(100% + 12px);
+        position: absolute;
+        bottom: 10px;
+        left: -6px;
+        z-index: -1;
+    }
+}

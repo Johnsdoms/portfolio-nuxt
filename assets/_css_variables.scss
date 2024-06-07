@@ -1,11 +1,28 @@
 @import "./variables/colors";
+@import "./variables/typography";
 
 :root {
-    /**
-     * Define colors as CSS variables for use in styling
+    /*
+     * Define color CSS variables
      */
 
     @each $name, $color in $colors {
         --c-#{$name}: #{$color};
+    }
+
+    /* 
+     * Define font and typography CSS variables
+     */
+
+    @each $name, $font-face in $font-faces {
+        --ff-#{$name}: #{$font-face};
+    }
+
+    @each $name, $font-size in $font-sizes {
+        --fs-#{$name}: #{$font-size};
+    }
+
+    @each $name, $font in $fonts {
+        --f-#{$name}: #{$font};
     }
 }

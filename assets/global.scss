@@ -1,14 +1,35 @@
 @import "./css_variables";
+@import "./mixins";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:800,900|Open+Sans:600,700&display=swap");
 
-* {
-    font-family: "Open Sans", Arial, "sans-serif"; /* <-- fonts */
+body {
+    font: var(--f-main);
     color: var(--c-text-color);
 }
 
-h1, h2 {
-  font-family: "Montserrat", Arial, "sans-serif";
-  font-weight: 900;
+h1 {
+    font: var(--f-h1);
+    color: var(--c-text-color);
+}
+
+h2 {
+    font: var(--f-h2);
+    color: var(--c-text-color);
+}
+
+h3 {
+    font: var(--f-h3);
+    color: var(--c-text-color);
+}
+
+h4 {
+    font: var(--f-h4);
+    color: var(--c-text-color);
+}
+
+h5 {
+    font: var(--f-h5);
+    color: var(--c-text-color);
 }
 
 body {

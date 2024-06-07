@@ -1,0 +1,26 @@
+/**
+ * Define SCSS font maps for typography variables
+ */
+
+$font-faces: (
+    title: "'Montserrat', Arial, 'sans-serif'",
+    primary: "'Open Sans', Arial, 'sans-serif'",
+);
+
+$font-sizes: (
+    xs: 12px,
+    sm: 14px,
+    md: 18px,
+    lg: 40px,
+    xl: 62px,
+    xxl: 72px,
+);
+
+$fonts: (
+    h1: "900 normal var(--fs-xxl)/1.2 var(--ff-title), sans-serif",
+    h2: "900 normal var(--fs-xl)/1.2 var(--ff-title), sans-serif",
+    h3: "900 normal var(--fs-lg)/1.2 var(--ff-title), sans-serif",
+    h4: "800 normal var(--fs-md)/1.2 var(--ff-title), sans-serif",
+    h5: "600 normal var(--fs-sm)/1.2 var(--ff-title), sans-serif",
+    main: "400 normal var(--fs-sm)/1.5 var(--ff-primary), sans-serif",
+);
