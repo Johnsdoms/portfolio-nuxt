@@ -1,0 +1,16 @@
+@import "./css_variables";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:800,900|Open+Sans:600,700&display=swap");
+
+* {
+    font-family: "Open Sans", Arial, "sans-serif"; /* <-- fonts */
+    color: var(--c-text-color);
+}
+
+h1, h2 {
+  font-family: "Montserrat", Arial, "sans-serif";
+  font-weight: 900;
+}
+
+body {
+    margin: 0;
+}

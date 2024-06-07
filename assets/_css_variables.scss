@@ -1,0 +1,11 @@
+@import "./variables/colors";
+
+:root {
+    /**
+     * Define colors as CSS variables for use in styling
+     */
+
+    @each $name, $color in $colors {
+        --c-#{$name}: #{$color};
+    }
+}
