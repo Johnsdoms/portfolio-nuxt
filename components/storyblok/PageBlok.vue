@@ -1,7 +1,7 @@
 <template>
     <div
         v-editable="blok"
-        class="main"
+        class="page-blok"
     >
         <StoryblokComponent
             v-for="blok in blok.body"
@@ -16,7 +16,4 @@ defineProps({ blok: Object });
 </script>
 
 <style lang="scss">
-.main {
-    // background-color: var(--c-yellow);
-}
 </style>

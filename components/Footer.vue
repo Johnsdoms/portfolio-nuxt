@@ -15,13 +15,12 @@ const copyrightYear = ref(dayjs().format("YYYY"));
 <style lang="scss">
 .footer {
     background-color: var(--c-dark-grey);
-    position: absolute;
-    bottom: 0;
     width: calc(100% - 40%);
     padding: 20px 0;
 
     &__text {
         color: var(--c-text-color-white);
+        font: var(--f-h5);
     }
 }
 </style>
