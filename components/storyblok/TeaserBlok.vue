@@ -22,19 +22,14 @@
 </template>
 
 <script setup>
-import Typewriter from "typewriter-effect/dist/core";
-
 const props = defineProps({ blok: Object });
 
 onMounted(() => {
-    new Typewriter("#headline_to_animate", {
-        strings: [`${props.blok.headline_to_animate}.`, "Me."],
-        autoStart: true,
-        loop: true,
-        pauseFor: 6500,
-        cursor: "",
-        wrapperClassName: "teaser__headline-animated-text",
-    });
+    useTypewriter(
+        "headline_to_animate",
+        [`${props.blok.headline_to_animate}.`, "Me."],
+        "teaser__headline-animated-text",
+    );
 });
 </script>
 
