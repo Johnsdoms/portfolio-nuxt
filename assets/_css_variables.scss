@@ -7,7 +7,7 @@
      */
 
     @each $name, $color in $colors {
-        --c-#{$name}: #{$color};
+        --c-#{'' + $name}: #{$color};
     }
 
     /* 
@@ -15,14 +15,14 @@
      */
 
     @each $name, $font-face in $font-faces {
-        --ff-#{$name}: #{$font-face};
+        --ff-#{'' + $name}: #{$font-face};
     }
 
     @each $name, $font-size in $font-sizes {
-        --fs-#{$name}: #{$font-size};
+        --fs-#{'' + $name}: #{$font-size};
     }
 
     @each $name, $font in $fonts {
-        --f-#{$name}: #{$font};
+        --f-#{'' + $name}: #{$font};
     }
 }
