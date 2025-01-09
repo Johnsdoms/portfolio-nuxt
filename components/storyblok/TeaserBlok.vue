@@ -1,19 +1,19 @@
 <template>
-    <div class="teaser">
+    <div class="teaser-blok">
         <div v-editable="blok">
-            <div class="teaser__headline-wrapper">
-                <h1 class="teaser__headline">
+            <div class="teaser-blok__headline-wrapper">
+                <h1 class="teaser-blok__headline">
                     {{ blok.headline_scaffold }}
                     <span
                         id="headline_to_animate"
-                        class="teaser__headline-animated"
+                        class="teaser-blok__headline-animated"
                     />
                 </h1>
             </div>
         </div>
 
         <NuxtImg
-            class="teaser__background-image"
+            class="teaser-blok__background-image"
             width="760"
             provider="storyblok"
             src="https://a.storyblok.com/f/287579/761x430/7c13d5e990/header_shape.svg"
@@ -28,13 +28,13 @@ onMounted(() => {
     useTypewriter(
         "headline_to_animate",
         [`${props.blok.headline_to_animate}.`, "Me."],
-        "teaser__headline-animated-text",
+        "teaser-blok__headline-animated-text",
     );
 });
 </script>
 
 <style lang="scss">
-.teaser {
+.teaser-blok {
 
     &__headline {
         &-wrapper {

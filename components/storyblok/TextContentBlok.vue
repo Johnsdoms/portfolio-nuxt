@@ -4,16 +4,19 @@
             <h2 class="text-content-blok__title">
                 {{ blok.title }}
             </h2>
+
+            <!-- <div> -->
             <div
                 class="text-content-blok__text"
                 v-html="textContent"
             />
-            <NuxtImg
-                class="text-content-blok__portfolio-image"
-                width="320"
-                provider="storyblok"
-                :src="blok.portrait.filename"
-            />
+            <!-- <NuxtImg
+                    class="text-content-blok__portfolio-image"
+                    width="320"
+                    provider="storyblok"
+                    :src="blok.portrait.filename"
+                /> -->
+            <!-- </div> -->
         </div>
 
         <NuxtImg

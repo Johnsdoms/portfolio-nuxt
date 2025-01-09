@@ -4,6 +4,7 @@
 
 @mixin backdrop-underline($color: "yellow", $height: 18px) {
     position: relative;
+    z-index: 0;
 
     &::after {
         content: "";
