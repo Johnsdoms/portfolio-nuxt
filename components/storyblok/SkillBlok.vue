@@ -25,10 +25,30 @@ defineProps({ blok: Object });
 
 <style lang="scss">
 .skill-blok {
+    $p: &;
+
     padding: 0 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    * {
+        transition: all 0.1s ease-in-out;
+    }
+
+    &:hover {
+        #{$p}__name {
+            color: var(--c-green);
+        }
+
+        #{$p}__logo-wrapper {
+            box-shadow: 0px 0px 8px 4px rgba(map-get($colors, green), 0.75);
+        }
+
+        #{$p}__logo {
+            transform: scale(1.06);
+        }
+    }
 
     &__name {
         color: var(--c-text-color-white);
