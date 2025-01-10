@@ -4,9 +4,9 @@
         class="page-blok"
     >
         <StoryblokComponent
-            v-for="blok in blok.body"
-            :key="blok._uid"
-            :blok="blok"
+            v-for="bodyBlok in blok.body"
+            :key="bodyBlok._uid"
+            :blok="bodyBlok"
         />
     </div>
 </template>

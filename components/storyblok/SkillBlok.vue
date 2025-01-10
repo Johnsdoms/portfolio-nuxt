@@ -3,7 +3,16 @@
         v-editable="blok"
         class="skill-blok"
     >
-        <div class="skill-blok__logo-wrapper" />
+        <div class="skill-blok__logo-wrapper">
+            <NuxtImg
+                v-if="blok.img"
+                class="skill-blok__logo"
+                width="44"
+                height="44"
+                provider="storyblok"
+                :src="blok.img.filename"
+            />
+        </div>
         <span class="skill-blok__name">
             {{ blok.name }}
         </span>
@@ -32,6 +41,9 @@ defineProps({ blok: Object });
         border-radius: 100%;
 
         margin: 8px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 </style>
