@@ -13,10 +13,4 @@ const story = await useAsyncStoryblok("home", { version: "draft" });
 </template>
 
 <style lang="scss">
-.home {
-    &__content, &__footer {
-        padding-left: 20% !important;
-        padding-right: 20% !important;
-    }
-}
 </style>
