@@ -27,7 +27,6 @@ defineProps({ blok: Object });
 .skill-blok {
     $p: &;
 
-    padding: 0 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +59,6 @@ defineProps({ blok: Object });
         background-color: var(--c-white);
         border-radius: 100%;
 
-        margin: 8px 0;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -35,9 +35,10 @@ onMounted(() => {
 .skill-list-blok {
     margin-top: 60px;
     background-color: var(--c-dark-grey);
+    padding-top: 24px;
+    padding-bottom: 24px;
 
     &__title {
-        padding-top: 24px;
         color: var(--c-green);
 
         &-animated {

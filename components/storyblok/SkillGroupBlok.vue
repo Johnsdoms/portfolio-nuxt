@@ -36,6 +36,11 @@ defineProps({ blok: Object });
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
+        gap: 16px;
+
+        > * {
+            flex-basis: calc(100% / 6 - 14px);
+        }
     }
 }
 </style>
