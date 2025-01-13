@@ -5,11 +5,13 @@
                 {{ blok.title }}
             </h2>
 
-            <StoryblokComponent
-                v-for="cvEntry in blok.cvEntries"
-                :key="cvEntry._uid"
-                :blok="cvEntry"
-            />
+            <div class="cv-list-blok__list-wrapper">
+                <StoryblokComponent
+                    v-for="cvEntry in blok.cvEntries"
+                    :key="cvEntry._uid"
+                    :blok="cvEntry"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -23,8 +25,10 @@ const _props = defineProps({ blok: Object });
     padding-top: 24px;
     padding-bottom: 24px;
 
-    &__title {
-        color: var(--c-green);
+    &__list-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
     }
 }
 </style>
