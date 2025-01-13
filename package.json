@@ -14,6 +14,7 @@
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "@storyblok/nuxt": "^6.0.10",
+    "@vueuse/core": "^12.4.0",
     "dayjs": "^1.11.11",
     "nuxt": "^3.11.2",
     "typewriter-effect": "^2.21.0",

@@ -25,4 +25,14 @@
     @each $name, $font in $fonts {
         --f-#{'' + $name}: #{$font};
     }
+
+    // set semantic colors for theme handling
+    --c-text-color: var(--c-text-color-grey); 
+    --c-background-color: var(--c-bg-white);
+
+    @media (prefers-color-scheme: dark) {
+         --c-text-color: var(--c-text-color-white);
+        --c-background-color: var(--c-bg-grey);
+    }
+      
 }
