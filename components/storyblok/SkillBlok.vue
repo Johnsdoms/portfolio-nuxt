@@ -51,6 +51,7 @@ defineProps({ blok: Object });
 
     &__name {
         color: var(--c-text-color-white);
+        text-align: center;
     }
 
     &__logo-wrapper {
