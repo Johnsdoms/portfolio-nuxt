@@ -34,7 +34,6 @@
 
                 <div
                     class="cv-entry-blok__logo-wrapper"
-                    :class="{ 'cv-entry-blok__logo-wrapper--has-background': isDark }"
                 >
                     <NuxtImg
                         v-if="blok.company_logo"
@@ -51,12 +50,9 @@
 
 <script setup lang="ts">
 import dayjs from "dayjs";
-import { usePreferredDark } from "@vueuse/core";
 
 const props = defineProps({ blok: Object });
 const textContent = computed(() => renderRichText(props.blok ? props.blok.description : ""));
-
-const isDark = usePreferredDark();
 
 function formatDate(date: string) {
     return dayjs(date).format("MMMM YYYY");
@@ -99,8 +95,8 @@ function formatDate(date: string) {
         align-self: flex-start;
         object-fit: contain;
 
-        &-wrapper {
-            &--has-background {
+        @media (prefers-color-scheme: dark) {
+            &-wrapper {
                 display: flex;
                 justify-content: center;
                 background-color: var(--c-white);
