@@ -1,10 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: false },
+
     modules: ["@nuxt/image", ["@storyblok/nuxt", {
-        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+        accessToken: import.meta.env.VITE_STORYBLOK_ACCESS_TOKEN,
         componentsDir: "~/components",
     }], "@nuxt/eslint"],
+
     components: {
         dirs: [
             {
@@ -13,11 +15,13 @@ export default defineNuxtConfig({
             },
         ],
     },
+
     image: {
         storyblok: {
             baseURL: "https://a.storyblok.com",
         },
     },
+
     vite: {
         css: {
             preprocessorOptions: {
@@ -27,6 +31,7 @@ export default defineNuxtConfig({
             },
         },
     },
+
     eslint: {
         config: {
             stylistic: {
@@ -37,4 +42,6 @@ export default defineNuxtConfig({
             },
         },
     },
+
+    compatibilityDate: "2025-01-10",
 });
