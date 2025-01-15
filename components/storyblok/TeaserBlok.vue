@@ -27,7 +27,7 @@ const props = defineProps({ blok: Object });
 onMounted(() => {
     useTypewriter(
         "headline_to_animate",
-        [`${props.blok.headline_to_animate}.`, "Me."],
+        props.blok.headline_to_animate,
         "teaser-blok__headline-animated-text",
     );
 });
