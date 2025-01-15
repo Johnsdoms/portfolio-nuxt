@@ -42,7 +42,7 @@ const textContent = computed(() => props.blok ? renderRichText(props.blok.text) 
 
 // do this so the image height and shape outside style are locked to the same value
 const IMAGE_HEIGHT = 320;
-const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT}px) 0 0)`;
+const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 40px is padding around image
 </script>
 
 <style lang="scss">
