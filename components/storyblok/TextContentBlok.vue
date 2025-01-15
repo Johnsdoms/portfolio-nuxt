@@ -13,7 +13,6 @@
                 <div class="text-content-blok__floating-image-wrapper">
                     <div class="text-content-blok__portrait-image-wrapper">
                         <NuxtImg
-                            ref="portraitImage"
                             class="text-content-blok__portrait-image"
                             :height="IMAGE_HEIGHT"
                             provider="storyblok"
@@ -78,12 +77,19 @@ const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT}px) 0 0)`;
             display: flex;
             align-items: flex-end;
             shape-outside: v-bind(shapeOutsideStyle);
+
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                background: var(--c-yellow);
+                height: 16px;
+                width: calc(100% - 40px); // from image padding
+                bottom: 36px;
+                left: 0;
+            }
         }
     }
-
-    &__text {
-        // text-align: left;
-    }
-
 }
 </style>
