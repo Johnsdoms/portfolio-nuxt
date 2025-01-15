@@ -29,6 +29,7 @@ const _props = defineProps({ blok: Object });
         display: flex;
         flex-direction: column;
         row-gap: 24px;
+        padding-left: 18px;
     }
 }
 </style>
