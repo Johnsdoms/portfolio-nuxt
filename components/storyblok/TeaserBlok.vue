@@ -3,7 +3,7 @@
         <div v-editable="blok">
             <div class="teaser-blok__headline-wrapper">
                 <h1 class="teaser-blok__headline">
-                    {{ blok.headline_scaffold }}
+                    <span v-html="blok.headline_scaffold" />
                     <span
                         id="headline_to_animate"
                         class="teaser-blok__headline-animated"
@@ -21,7 +21,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({ blok: Object });
 
 onMounted(() => {
