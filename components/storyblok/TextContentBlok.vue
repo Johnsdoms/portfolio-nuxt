@@ -52,6 +52,10 @@ const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 4
     position: relative;
     margin-left: 10%;
 
+    @include breakpoint-down(md) {
+        margin-left: 4%;
+    }
+
     &__text {
         margin-left: 30px;
     }
@@ -61,6 +65,14 @@ const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 4
         left: -180px;
         top: 80px;
         z-index: -10;
+
+        @include breakpoint-down(md) {
+            left: -280px;
+        }
+
+        @include breakpoint-down(sm) {
+            left: -310px;
+        }
     }
 
     &__content-wrapper {
@@ -79,6 +91,14 @@ const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 4
             shape-outside: v-bind(shapeOutsideStyle);
 
             position: relative;
+
+            @include breakpoint-down(md) {
+                margin-right: -40px;
+            }
+
+            @include breakpoint-down(sm) {
+                margin-right: 0;
+            }
 
             &::before {
                 content: "";

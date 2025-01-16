@@ -38,7 +38,6 @@
                     <NuxtImg
                         v-if="blok.company_logo"
                         class="cv-entry-blok__logo"
-                        width="140px"
                         provider="storyblok"
                         :src="blok.company_logo.filename"
                     />
@@ -70,7 +69,6 @@ function formatDate(date: string) {
 
     &__location {
         font: var(--f-h4);
-        font-weight: regular;
     }
 
     &__content {
@@ -92,8 +90,14 @@ function formatDate(date: string) {
 
     &__logo {
         max-height: 140px;
+        width: 140px;
         align-self: flex-start;
         object-fit: contain;
+
+        @include breakpoint-down(sm) {
+            max-height: 80px;
+            max-width: 100px;
+        }
 
         @media (prefers-color-scheme: dark) {
             &-wrapper {

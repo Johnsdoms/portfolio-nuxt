@@ -44,6 +44,10 @@ onMounted(() => {
         &-animated {
             @include backdrop-underline();
         }
+
+        @include breakpoint-down(lg) {
+            min-height: 150px;
+        }
     }
 }
 </style>

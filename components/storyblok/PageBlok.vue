@@ -19,7 +19,7 @@ defineProps({ blok: Object });
 <style lang="scss">
 .page-blok {
     &__body-section {
-        padding: 0 20%;
+        padding: 0 var(--s--layout-padding);
     }
 }
 </style>
