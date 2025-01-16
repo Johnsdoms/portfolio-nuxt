@@ -17,3 +17,25 @@
         z-index: -1;
     }
 }
+
+@import "./variables/breakpoints";
+
+@mixin fromBreakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    } @else {
+      @error "No value found for breakpoint `#{$breakpoint}` in $breakpoints map.";
+    }
+}
+
+@mixin belowBreakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (max-width: calc(#{map-get($breakpoints, $breakpoint)} - 1px)) {
+        @content;
+      }
+    } @else {
+      @error "No value found for breakpoint `#{$breakpoint}` in $breakpoints map.";
+    }
+}
