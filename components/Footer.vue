@@ -3,6 +3,7 @@
         <span class="footer__text">
             Made with &lt;3 in Malmö, Sweden. © {{ copyrightYear }}
         </span>
+        <ContactMeButton />
     </div>
 </template>
 
@@ -16,6 +17,9 @@ const copyrightYear = ref(dayjs().format("YYYY"));
 .footer {
     background-color: var(--c-dark-grey);
     padding: 20px 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &__text {
         color: var(--c-text-color-white);
