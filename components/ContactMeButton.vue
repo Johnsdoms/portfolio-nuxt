@@ -78,6 +78,11 @@ const _props = withDefaults(defineProps<Props>(), {
         width: auto;
         max-width: 0;
         transition: all 0.2s ease-in;
+
+        @media (pointer: coarse) {
+            max-width: 140px;
+            opacity: 1;
+        }
     }
 }
 </style>

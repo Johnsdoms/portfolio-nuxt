@@ -25,5 +25,11 @@ const copyrightYear = ref(dayjs().format("YYYY"));
         color: var(--c-text-color-white);
         font: var(--f-h5);
     }
+
+    @include breakpoint-down(sm) {
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: 12px;
+    }
 }
 </style>
