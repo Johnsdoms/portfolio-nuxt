@@ -1,4 +1,11 @@
 <script setup>
+useHead({
+    title: "// jonashamann.com",
+    meta: [
+        { name: "description", content: "Welcome to my portfolio site." },
+    ],
+});
+
 const story = await useAsyncStoryblok("home", { version: import.meta.env.VITE_STORYBLOK_MODE });
 </script>
 
