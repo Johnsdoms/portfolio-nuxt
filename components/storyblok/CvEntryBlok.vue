@@ -94,6 +94,13 @@ function formatDate(date: string) {
         align-self: flex-start;
         object-fit: contain;
 
+        &-wrapper {
+            position: sticky;
+            top: 12px;
+            width: fit-content;
+            height: fit-content;
+        }
+
         @include breakpoint-down(sm) {
             max-height: 80px;
             max-width: 100px;
@@ -105,14 +112,22 @@ function formatDate(date: string) {
                 justify-content: center;
                 background-color: var(--c-white);
                 padding: 20px;
-                width: 100px;
-                height: 100px;
+                aspect-ratio: 1 / 1;
                 border-radius: 100%;
 
                 img {
                     max-width: 100px;
                     max-height: 80px;
                     align-self: center;
+                }
+
+                @include breakpoint-down(sm) {
+                    padding: 10px;
+
+                    img {
+                        max-width: 60px;
+                        max-height: 50px;
+                    }
                 }
             }
         }
