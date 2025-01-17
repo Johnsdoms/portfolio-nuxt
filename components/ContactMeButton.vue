@@ -73,6 +73,8 @@ const _props = withDefaults(defineProps<Props>(), {
         color: var(--c-text-color-grey);
         text-decoration: none;
         text-wrap: nowrap;
+        // legacy support
+        white-space: nowrap;
         overflow: hidden;
         opacity: 0;
         width: auto;
