@@ -21,6 +21,10 @@
 
     @each $name, $font-size in $font-sizes {
         --fs-#{'' + $name}: #{$font-size};
+
+        @include breakpoint-down(sm) {
+            --fs-#{'' + $name}: max(14px, round(down, #{$font-size * 0.82}, 2px));
+        }
     }
 
     @each $name, $font in $fonts {
