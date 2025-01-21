@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     modules: ["@nuxt/image", ["@storyblok/nuxt", {
         accessToken: import.meta.env.VITE_STORYBLOK_ACCESS_TOKEN,
         componentsDir: "~/components",
-    }], "@nuxt/eslint"],
+    }], "@nuxt/eslint", "v-gsap-nuxt"],
 
     components: {
         dirs: [

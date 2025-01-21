@@ -11,8 +11,11 @@
             <div class="text-content-blok__content-wrapper">
                 <!-- additional wrapper for bottom floating layout -->
                 <div class="text-content-blok__floating-image-wrapper">
-                    <div class="text-content-blok__portrait-image-wrapper">
+                    <div
+                        class="text-content-blok__portrait-image-wrapper"
+                    >
                         <NuxtImg
+                            v-gsap.whenVisible.once.from="{ autoAlpha: 0, x: 50 }"
                             class="text-content-blok__portrait-image"
                             :height="IMAGE_HEIGHT"
                             provider="storyblok"
@@ -28,6 +31,7 @@
         </div>
 
         <NuxtImg
+            v-gsap.parallax.slower-2
             class="text-content-blok__background-image"
             width="380"
             provider="storyblok"
@@ -108,6 +112,7 @@ const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 4
                 width: calc(100% - 40px); // from image padding
                 bottom: 36px;
                 left: 0;
+                z-index: 10;
             }
         }
     }

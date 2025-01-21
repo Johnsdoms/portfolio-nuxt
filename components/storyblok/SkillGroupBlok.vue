@@ -10,7 +10,10 @@
             {{ blok.group_name }}
         </h3>
 
-        <div class="skill-group-blok__skills-list">
+        <div
+            v-gsap.whenVisible.once.stagger.from="{ opacity: 0, scale: 0.2, stagger: 0.05 }"
+            class="skill-group-blok__skills-list"
+        >
             <StoryblokComponent
                 v-for="skill in blok.skills"
                 :key="skill._uid"

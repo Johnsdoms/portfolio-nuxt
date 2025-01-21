@@ -4,29 +4,45 @@
             v-if="blok"
             v-editable="blok"
         >
-            <div class="cv-entry-blok__title-wrapper">
-                <span class="cv-entry-blok__period">
-                    <template v-if="blok.period_end">
-                        <span>{{ formatDate(blok.period_start) }}</span>
-                        -
-                        <span>{{ formatDate(blok.period_end) }}</span>
-                    </template>
-                    <template v-else>
-                        <span>From {{ formatDate(blok.period_start) }}</span>
-                    </template>
-                </span>
-                <span
-                    v-if="blok.location"
-                    class="cv-entry-blok__location"
+            <div
+                v-gsap.timeline.whenVisible.once
+                class="cv-entry-blok__title-wrapper"
+            >
+                <p
+                    v-gsap.add.order-1.from="{ opacity: 0, y: 24 }"
+                    class="cv-entry-blok__sub-title"
                 >
-                    | 📍 {{ blok.location }}
-                </span>
-                <h3 class="cv-entry-blok__title">
+                    <span
+                        class="cv-entry-blok__period"
+                    >
+                        <template v-if="blok.period_end">
+                            <span>{{ formatDate(blok.period_start) }}</span>
+                            -
+                            <span>{{ formatDate(blok.period_end) }}</span>
+                        </template>
+                        <template v-else>
+                            <span>From {{ formatDate(blok.period_start) }}</span>
+                        </template>
+                    </span>
+                    <span
+                        v-if="blok.location"
+                        class="cv-entry-blok__location"
+                    >
+                        | 📍 {{ blok.location }}
+                    </span>
+                </p>
+                <h3
+                    v-gsap.add.order-0.from="{ x: -32, opacity: 0 }"
+                    class="cv-entry-blok__title"
+                >
                     {{ blok.title }}
                 </h3>
             </div>
 
-            <div class="cv-entry-blok__content">
+            <div
+                v-gsap.whenVisible.once.stagger.from="{ opacity: 0, stagger: 0.4 }"
+                class="cv-entry-blok__content"
+            >
                 <div
                     class="cv-entry-blok__text"
                     v-html="textContent"
@@ -61,6 +77,10 @@ function formatDate(date: string) {
 <style lang="scss">
 .cv-entry-blok {
     margin-top: 12px;
+
+    &__sub-title {
+        margin: 0;
+    }
 
     &__period {
         color: var(--c-yellow);
