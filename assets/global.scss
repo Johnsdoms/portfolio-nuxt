@@ -38,3 +38,12 @@ h5 {
     color: var(--c-text-color);
     margin: 0;
 }
+
+a {
+    color: var(--c-green);
+    text-decoration: underline;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

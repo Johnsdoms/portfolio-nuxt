@@ -2,7 +2,7 @@
  * Define global styling mixins for reusable styles
  */
 
-@mixin backdrop-underline($color: "yellow", $height: 18px) {
+@mixin backdrop-underline($color: "yellow", $height: 18px, $bottom: 10px) {
     position: relative;
     z-index: 0;
 
@@ -12,7 +12,7 @@
         height: $height;
         width: calc(100% + 12px);
         position: absolute;
-        bottom: 10px;
+        bottom: $bottom;
         left: -6px;
         z-index: -1;
     }
