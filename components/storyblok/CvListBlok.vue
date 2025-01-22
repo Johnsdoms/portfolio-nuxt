@@ -1,5 +1,8 @@
 <template>
-    <div class="cv-list-blok">
+    <div
+        id="cv"
+        class="cv-list-blok"
+    >
         <div v-editable="blok">
             <h2 class="cv-list-blok__title">
                 {{ blok.title }}

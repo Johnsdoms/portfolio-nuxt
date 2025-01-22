@@ -1,5 +1,8 @@
 <template>
-    <div class="skill-list-blok">
+    <div
+        id="skills"
+        class="skill-list-blok"
+    >
         <div v-editable="blok">
             <h2 class="skill-list-blok__title">
                 {{ blok.title_scaffold }}
