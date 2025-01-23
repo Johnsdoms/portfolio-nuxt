@@ -13,8 +13,10 @@
                 <div class="text-content-blok__floating-image-wrapper">
                     <div
                         class="text-content-blok__portrait-image-wrapper"
+                        :class="{ 'text-content-blok__portrait-image-wrapper--animate': animateDecoration }"
                     >
                         <NuxtImg
+                            ref="image"
                             v-gsap.whenVisible.once.from="{ autoAlpha: 0, x: 50 }"
                             class="text-content-blok__portrait-image"
                             :height="IMAGE_HEIGHT"
@@ -41,12 +43,22 @@
 </template>
 
 <script setup lang="ts">
+import { useElementVisibility, watchOnce } from "@vueuse/core";
+
 const props = defineProps({ blok: Object });
 const textContent = computed(() => props.blok ? renderRichText(props.blok.text) : "");
 
 // do this so the image height and shape outside style are locked to the same value
 const IMAGE_HEIGHT = 320;
 const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 40px is padding around image
+
+const imageRef = useTemplateRef<HTMLElement>("image");
+const imageVisible = useElementVisibility(imageRef);
+const animateDecoration = ref(false);
+
+watchOnce(imageVisible, (_isVisible) => {
+    animateDecoration.value = true;
+});
 </script>
 
 <style lang="scss">
@@ -104,15 +116,28 @@ const shapeOutsideStyle = `inset(calc(100% - ${IMAGE_HEIGHT + 40}px) 0 0)`; // 4
                 margin-right: 0;
             }
 
+            @keyframes expandWidth {
+                0% {
+                    width: 0;
+                }
+
+                100% {
+                    width: calc(100% - 40px); // reduce by image padding
+                }
+            }
+
+            &--animate {
             &::before {
                 content: "";
                 position: absolute;
                 background: var(--c-yellow);
                 height: 16px;
-                width: calc(100% - 40px); // from image padding
+                    width: 0;
                 bottom: 36px;
                 left: 0;
                 z-index: 10;
+                    animation: expandWidth .8s cubic-bezier(0.69, 0.02, 0.4, 1) 0.4s  forwards;
+                }
             }
         }
     }
